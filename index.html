@@ -20,6 +20,7 @@
     
     <script>
         var ano = document.getElementById('ano')
+        var ano2 = Number(ano.value)
         var resultado = document.getElementById('resposta')
 
         function apagar() {
@@ -27,14 +28,14 @@
         }
 
         function Clique() {
-            if (typeof ano.value === 'string'){
+            if (typeof ano2.value === 'string'){
                 resultado.innerHTML = '<p>Cara, não dê trabalho pro programa. Digite um número.</p>'
-            } else if (ano.value > 2023) {
+            } else if (ano2.value > 2023) {
                 resultado.innerHTML = '<p>Ou você é um viajante do tempo ou está mentindo.</p>'
-            } else if (ano.value == 2023) {
+            } else if (ano2.value == 2023) {
                 resultado.innerHTML = '<p>Um recém nascido que já sabe digitar, incrível!</p>'
-            } else if (ano.value < 2023) {
-                var idade = 2023 - ano.value
+            } else if (ano2.value < 2023) {
+                var idade = 2023 - ano2.value
                 resultado.innerHTML = `<p>Sua idade é ${idade} anos.</p>`
             }
         }
