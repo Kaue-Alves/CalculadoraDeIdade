@@ -11,7 +11,7 @@
         <div id="folha">
             <h1>Calculadora de Idade</h1>
             <div id="digitar">
-                <input type="text" name="ano" id="ano" value="Digite sua idade" onclick="apagar()">
+                <input type="number" name="ano" id="ano" value="Digite sua idade" onclick="apagar()">
                 <input type="button" value="Calcular" id="Calcular" onclick="Clique()">
             </div>
             <div id="resposta"></div>
@@ -20,7 +20,6 @@
     
     <script>
         var ano = document.getElementById('ano')
-        var ano2 = Number(ano)
         var resultado = document.getElementById('resposta')
 
         function apagar() {
@@ -28,12 +27,12 @@
         }
 
         function Clique() {
-            if (ano2.value > 2023) {
+            if (ano.value > 2023) {
                 resultado.innerHTML = '<p>Ou você é um viajante do tempo ou está mentindo.</p>'
-            } else if (ano2.value == 2023) {
+            } else if (ano.value == 2023) {
                 resultado.innerHTML = '<p>Um recém nascido que já sabe digitar, incrível!</p>'
-            } else if (ano2.value < 2023) {
-                var idade = 2023 - ano2.value
+            } else if (ano.value < 2023) {
+                var idade = 2023 - ano.value
                 resultado.innerHTML = `<p>Sua idade é ${idade} anos.</p>`
             }
         }
